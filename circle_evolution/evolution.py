@@ -98,7 +98,7 @@ class Evolution:
             mutated.render()
             newfit = fitness.score(mutated.phenotype)
 
-            if newfit > fit:
-                fit = newfit
-                self.specie = mutated
-                self.print_progress(newfit)
+            # if newfit > fit:
+            #     fit = newfit
+            #     self.specie = mutated
+            #     self.print_progress(newfit)
