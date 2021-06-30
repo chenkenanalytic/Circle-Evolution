@@ -8,6 +8,13 @@ from circle_evolution.species import Specie
 
 import circle_evolution.fitness as fitness
 
+from circle_evolution import helpers
+
+from IPython.display import clear_output
+
+clear_output(wait=True)
+
+
 
 class Evolution:
     """Logic for a Species Evolution.
@@ -77,6 +84,9 @@ class Evolution:
         """
         print("GEN {}, FIT {:.8f}".format(self.generation, fit))
 
+
+
+
     def evolve(self, fitness=fitness.MSEFitness, max_generation=100000):
         """Genetic Algorithm for evolution.
 
@@ -98,7 +108,10 @@ class Evolution:
             mutated.render()
             newfit = fitness.score(mutated.phenotype)
 
-            # if newfit > fit:
-            #     fit = newfit
-            #     self.specie = mutated
-            #     self.print_progress(newfit)
+            if newfit > fit:
+                clear_output(wait=True)
+                helpers.show_image(self.specie.phenotype)
+
+                # fit = newfit
+                # self.specie = mutated
+                # self.print_progress(newfit)
