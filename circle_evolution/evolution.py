@@ -111,7 +111,6 @@ class Evolution:
             if newfit > fit:
                 clear_output(wait=True)
                 helpers.show_image(self.specie.phenotype)
-
-                # fit = newfit
-                # self.specie = mutated
-                # self.print_progress(newfit)
+                fit = newfit
+                self.specie = mutated
+                self.print_progress(newfit)
